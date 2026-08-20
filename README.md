@@ -1,67 +1,67 @@
 # OlamaStartWin_v1.5.0
 
-Простой менеджер для управления локальным сервером Ollama на Windows.
+A simple manager for managing a local Ollama server on Windows.
 
 ![OlamaStartWin_v1.5.0](OlamaStartWin_v1.5.0.png)
 
-## Краткое описание
+## Brief Description
 
-Это графическое приложение (однофайловый Python-скрипт) предоставляет удобный интерфейс для работы с Ollama: запуск/остановка сервера, просмотр и управление моделями, скачивание моделей, тестирование генерации и мониторинг системы (CPU/RAM/GPU).
+This graphical application (single-file Python script) provides a convenient interface for working with Ollama: starting/stopping the server, viewing and managing models, downloading models, testing generation, and system monitoring (CPU/RAM/GPU).
 
-Программа ориентирована на Windows; использует системные вызовы и Windows-утилиты для оценки загрузки GPU и управления процессами.
+The program is Windows-based and uses system calls and Windows utilities to assess GPU load and manage processes.
 
-## Требования
+## Requirements
 
 - Windows 10/11
 - Python 3.8+
-- Ollama (в PATH или установлена в стандартной директории пользователя)
-- Python-зависимости:
-  - customtkinter
-  - psutil
+- Ollama (in the PATH or installed in the user's default directory)
+- Python dependencies:
+- customtkinter
+- psutil
 
-Установить зависимости можно, например, так:
+You can install dependencies, for example, like this:
 
 pip install customtkinter psutil
 
-## Как работает
+## How it works
 
-При запуске приложение автоматически проверяет доступность Ollama через локальный API (http://127.0.0.1:11434) и наличие процесса Ollama. Если Ollama не запущен, можно запустить сервер из интерфейса (кнопка START). Для запуска/остановки/принудительной остановки используются системные вызовы (subprocess, taskkill и т.п.).
+When launched, the application automatically checks for Ollama availability via the local API (http://127.0.0.1:11434) and the presence of an Ollama process. If Ollama isn't running, you can start the server from the interface (START button). System calls (subprocess, taskkill, etc.) are used to start/stop/force stop.
 
-По умолчанию приложение пытается найти `ollama` в PATH; при отсутствии — использует путь:
+By default, the application tries to find `ollama` in the PATH; if not, it uses the path:
 `%USERPROFILE%\AppData\Local\Programs\Ollama\ollama.exe`.
 
-## Основные возможности
+## Main Features
 
-- Запуск / остановка / перезапуск Ollama-сервера
-- Принудительная остановка (taskkill) всех возможных процессов Ollama
-- Просмотр списка установленных моделей (`ollama list`) и загруженных в память (`ollama ps`)
-- Скачивание модели (`ollama pull <model>`) с индикатораом прогресса
-- Удаление модели с диска (`ollama rm <model>`)
-- Выгрузка остановка работающей модели (`ollama stop <model>`)
-- Запуск выбранной модели в отдельном окне CMD (`ollama run <model>`)
-- Простейшее тестирование модели: отправка промпта в API `/api/generate` и отображение результата с базовой статистикой (время, токены, скорость)
-- Системный монитор: CPU, RAM и универсальная оценка GPU (через `typeperf`)
-- Несколько заготовок промптов (переписать, суммировать, ревью кода и т.д.)
+- Start/stop/restart the Ollama server
+- Force stop (taskkill) of all possible Ollama processes
+- View a list of installed models (`ollama list`) and those loaded into memory (`ollama ps`)
+- Download a model (`ollama pull <model>`) with a progress bar
+- Delete a model from disk (`ollama rm <model>`)
+- Unload and stop a running model (`ollama stop <model>`)
+- Run a selected model in a separate CMD window (`ollama run <model>`)
+- Basic model testing: send a prompt to the API /api/generate and display the result with basic statistics (time, tokens, speed)
+- System monitor: CPU, RAM, and universal GPU evaluation (via `typeperf`)
+- Several prompt templates (rewrite, summarize, review) code, etc.)
 
-## Запуск
+## Launch
 
-Запустить программу:
+Run the program:
 
 python OlamaStartWin_v1.5.0.py
 
-Программа откроет окно с панелями: слева — управление сервером и кнопки для операций, справа — список моделей и монитор, снизу — поле ввода промпта и область ответа.
+The program will open a window with panels: on the left are server controls and operation buttons, on the right are a list of models and a monitor, and at the bottom are a prompt input field and a response area.
 
-## Замечания и ограничения
+## Notes and Limitations
 
-- Приложение ориентировано на Windows и использует Windows-специфичные флаги и утилиты (например, `creationflags=subprocess.CREATE_NO_WINDOW`, `taskkill`, `typeperf`). На Linux/macOS возможны ошибки работы.
-- Для корректной работы требуется установленный Ollama и доступ к его локальному API.
-- Приложение запускает внешние процессы и использует права пользователя — будьте внимательны при загрузке/удалении моделей.
+- The application is designed for Windows and uses Windows-specific flags and utilities (e.g., `creationflags=subprocess.CREATE_NO_WINDOW`, `taskkill`, `typeperf`). Errors may occur on Linux/macOS.
+- For correct operation, Olama must be installed and have access to its local API.
+- The application launches external processes and uses user privileges – please be careful when loading/deleting models.
 
-## Файлы
+## Files
 
-- `OlamaStartWin_v1.5.0.py` — основной скрипт приложения
-- `OlamaStartWin_v1.5.0.png` — скриншот/иконка интерфейса
+- `OlamaStartWin_v1.5.0.py` — main application script
+- `OlamaStartWin_v1.5.0.png` — interface screenshot/icon
 
-## Лицензия
+## License
 
-MIT (или укажите свою лицензию)
+MIT
