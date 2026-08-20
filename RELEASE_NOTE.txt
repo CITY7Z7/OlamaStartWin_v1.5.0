@@ -1,1 +1,5 @@
-Standalone Windows executable for managing a local Ollama server: start/stop/restart the server; manage models (download with progress, delete, unload); run models in a CMD window; basic prompt testing via the local API with simple metrics; and simple system monitoring (CPU/RAM/GPU). Built as a single .exe — no separate Python or dependencies required. MIT.
+**OlamaStartWin v1.5.0**
+
+**Standalone** Windows executable for managing a local Ollama server: **start/stop/restart** the server; manage models (**download** with progress, **delete**, **unload**); run models in a **CMD** window; **basic prompt testing** via the local API with simple metrics; and simple system monitoring (CPU/RAM/GPU). 
+
+Built as a single .exe — no separate Python or dependencies required. MIT.
