@@ -1029,7 +1029,7 @@ class OllamaManagerApp(ctk.CTk):
         self.model_selection_var.set(model_name)
 
         self.selected_label.configure(
-            text=f"Выбрано: {model_name}"
+            text=f"Selected: {model_name}"
         )
 
         self.btn_cmd.configure(
