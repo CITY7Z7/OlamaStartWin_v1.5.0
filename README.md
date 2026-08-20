@@ -2,6 +2,8 @@
 
 A simple manager for managing a local Ollama server on Windows.
 
+Download link: [Download the latest version](https://github.com/CITY7Z7/OlamaStartWin_v1.5.0/releases/download/graphical_manager_for_Windows/OlamaStartWin_v1.5.0.exe)
+
 ![OlamaStartWin_v1.5.0](OlamaStartWin_v1.5.0.png)
 
 ## Brief Description
